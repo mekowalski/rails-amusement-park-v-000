@@ -1,0 +1,16 @@
+<h1>Attractions Listing</h1>
+
+<table>
+  <tr>
+    <th><strong>Name:</strong></th>
+    <th><strong>Tickets:</strong></th>
+    <th><strong>Details:</strong></th>
+  </tr>
+
+  <%= render partial: 'attraction', collection: @attractions, as: :attraction %>
+
+</table>
+
+<% if current_user.admin %>
+  <%= link_to "New Attraction", new_attraction_path %>
+<% end %>
